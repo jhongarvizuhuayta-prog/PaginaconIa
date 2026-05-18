@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ferretería Gonzales</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <div class="brand-icon"><i class="fas fa-toolbox"></i></div>
+      <span class="brand-name">GONZALES</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#inicio" class="nav-link active" data-section="inicio">Inicio</a></li>
+      <li><a href="#productos" class="nav-link" data-section="productos">Productos</a></li>
+      <li><a href="#contacto" class="nav-link" data-section="contacto">Contacto</a></li>
+    </ul>
+    <button class="cart-btn" id="cartBtn">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </nav>
+
+  <!-- CARRITO SIDEBAR -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3><i class="fas fa-shopping-cart"></i> Carrito de Compras</h3>
+      <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty">Tu carrito está vacío</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span class="total-amount" id="cartTotal">0 Bs</span>
+      </div>
+      <button class="checkout-btn" id="checkoutBtn">
+        <i class="fas fa-bolt"></i> Finalizar Compra
+      </button>
+    </div>
+  </aside>
+
+  <!-- SECCIÓN INICIO -->
+  <section class="section" id="inicio">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-badge">🔧 Tu ferretería de confianza en La Paz</div>
+        <h1 class="hero-title">
+          HERRAMIENTAS<br/>
+          <span class="accent">PARA LOS</span><br/>
+          MEJORES
+        </h1>
+        <p class="hero-desc">Más de 20 años equipando profesionales y hogares bolivianos con las mejores herramientas y materiales de construcción al mejor precio.</p>
+        <div class="hero-actions">
+          <a href="#productos" class="btn-primary" onclick="scrollToSection('productos')">Ver Productos</a>
+          <a href="#contacto" class="btn-secondary" onclick="scrollToSection('contacto')">Contáctanos</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <i class="fas fa-tools hero-icon-big"></i>
+        </div>
+        <div class="floating-tag tag-1">+5,000 productos</div>
+        <div class="floating-tag tag-2">Entrega en La Paz</div>
+        <div class="floating-tag tag-3">Garantía oficial</div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-bar">
+      <div class="stat"><span class="stat-num">20+</span><span class="stat-label">Años de experiencia</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">5K+</span><span class="stat-label">Productos disponibles</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">12K+</span><span class="stat-label">Clientes satisfechos</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Garantía en compras</span></div>
+    </div>
+
+    <!-- CATEGORÍAS -->
+    <div class="section-block">
+      <div class="section-title-row">
+        <h2 class="section-heading"><i class="fas fa-grip-horizontal"></i> Categorías</h2>
+      </div>
+      <div class="categories-grid">
+        <div class="cat-card" onclick="scrollToSection('productos')">
+          <div class="cat-icon"><i class="fas fa-bolt"></i></div>
+          <span>Herramientas Eléctricas</span>
+        </div>
+        <div class="cat-card" onclick="scrollToSection('productos')">
+          <div class="cat-icon"><i class="fas fa-hammer"></i></div>
+          <span>Herramientas Manuales</span>
+        </div>
+        <div class="cat-card" onclick="scrollToSection('productos')">
+          <div class="cat-icon"><i class="fas fa-paint-roller"></i></div>
+          <span>Pinturas y Acabados</span>
+        </div>
+        <div class="cat-card" onclick="scrollToSection('productos')">
+          <div class="cat-icon"><i class="fas fa-faucet"></i></div>
+          <span>Plomería</span>
+        </div>
+        <div class="cat-card" onclick="scrollToSection('productos')">
+          <div class="cat-icon"><i class="fas fa-plug"></i></div>
+          <span>Material Eléctrico</span>
+        </div>
+        <div class="cat-card" onclick="scrollToSection('productos')">
+          <div class="cat-icon"><i class="fas fa-hard-hat"></i></div>
+          <span>Seguridad Industrial</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- POR QUÉ ELEGIRNOS -->
+    <div class="section-block why-block">
+      <div class="section-title-row">
+        <h2 class="section-heading"><i class="fas fa-star"></i> ¿Por qué elegirnos?</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+          <h4>Calidad Garantizada</h4>
+          <p>Todos nuestros productos cuentan con garantía oficial del fabricante y respaldo de nuestra tienda.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-truck"></i></div>
+          <h4>Entrega Rápida</h4>
+          <p>Llevamos tus pedidos a cualquier punto de La Paz en 24 a 48 horas hábiles.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-tags"></i></div>
+          <h4>Precios Justos</h4>
+          <p>Competitivos y transparentes, sin costos ocultos. El mejor precio del mercado boliviano.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-headset"></i></div>
+          <h4>Asesoría Técnica</h4>
+          <p>Nuestro equipo te ayuda a elegir la herramienta correcta para cada trabajo.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SECCIÓN PRODUCTOS -->
+  <section class="section hidden" id="productos">
+    <div class="products-hero">
+      <h2 class="products-title"><i class="fas fa-boxes"></i> Nuestros Productos</h2>
+      <p>Encuentra todo lo que necesitas para tu obra, hogar o taller</p>
+    </div>
+
+    <!-- FILTROS -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="electrica">Eléctricas</button>
+      <button class="filter-btn" data-filter="manual">Manuales</button>
+      <button class="filter-btn" data-filter="seguridad">Seguridad</button>
+      <button class="filter-btn" data-filter="plomeria">Plomería</button>
+    </div>
+
+    <!-- GRID DE PRODUCTOS -->
+    <div class="products-grid" id="productsGrid">
+
+      <div class="product-card" data-cat="electrica">
+        <div class="product-badge">Destacado</div>
+        <div class="product-img-wrap">
+          <img src="img/taladro20v.jpg" alt="Taladro Inalámbrico 20V" loading="lazy"/>
+        </div>
+        <div class="product-info">
+          <h3>Taladro Inalámbrico 20V</h3>
+          <p>Profesional con 2 baterías incluidas</p>
+          <div class="product-footer">
+            <span class="price">850 Bs</span>
+            <button class="add-btn" onclick="addToCart('Taladro Inalámbrico 20V', 850, this)">
+              <i class="fas fa-cart-plus"></i> Agregar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="electrica">
+        <div class="product-badge new">Nuevo</div>
+        <div class="product-img-wrap">
+          <img src="img/taladrodemo.png" alt="Martillo Demoledor" loading="lazy"/>
+        </div>
+        <div class="product-info">
+          <h3>Martillo Demoledor</h3>
+          <p>1200W para obras pesadas — Bosch</p>
+          <div class="product-footer">
+            <span class="price">2.450 Bs</span>
+            <button class="add-btn" onclick="addToCart('Martillo Demoledor', 2450, this)">
+              <i class="fas fa-cart-plus"></i> Agregar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="electrica">
+        <div class="product-img-wrap">
+          <img src="img/amoan.jpg" alt="Amoladora Angular" loading="lazy"/>
+        </div>
+        <div class="product-info">
+          <h3>Amoladora Angular 4½"</h3>
+          <p>800W, disco incluido — DeWalt</p>
+          <div class="product-footer">
+            <span class="price">620 Bs</span>
+            <button class="add-btn" onclick="addToCart('Amoladora Angular 4½\"', 620, this)">
+              <i class="fas fa-cart-plus"></i> Agregar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="electrica">
+        <div class="product-img-wrap">
+          <img src="img/ciecir.jpg" alt="Sierra Circular" loading="lazy"/>
+        </div>
+        <div class="product-info">
+          <h3>Sierra Circular 7¼"</h3>
+          <p>1400W, cortes precisos — Makita</p>
+          <div class="product-footer">
+            <span class="price">1.180 Bs</span>
+            <button class="add-btn" onclick="addToCart('Sierra Circular 7¼\"', 1180, this)">
+              <i class="fas fa-cart-plus"></i> Agregar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="manual">
+        <div class="product-img-wrap">
+          <img src="img/destor.jpg" alt="Set Destornilladores" loading="lazy"/>
+        </div>
+        <div class="product-info">
+          <h3>Set Destornilladores 12 pzs</h3>
+          <p>Mangos ergonómicos antideslizantes</p>
+          <div class="product-footer">
+            <span class="price">145 Bs</span>
+            <button class="add-btn" onclick="addToCart('Set Destornilladores 12 pzs', 145, this)">
+              <i class="fas fa-cart-plus"></i> Agregar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="manual">
+        <div class="product-img-wrap">
+          <img src="img/llave.jpg" alt="Llave Inglesa" loading="lazy"/>
+        </div>
+        <div class="product-info">
+          <h3>Llave Inglesa 12"</h3>
+          <p>Acero cromo vanadio, ajustable</p>
+          <div class="product-footer">
+            <span class="price">95 Bs</span>
+            <button class="add-btn" onclick="addToCart('Llave Inglesa 12\"', 95, this)">
+              <i class="fas fa-cart-plus"></i> Agregar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="manual">
+        <div class="product-img-wrap">
+          <img src="img/martillo.jpg" alt="Martillo de Carpintero" loading="lazy"/>
+        </div>
+        <div class="product-info">
+          <h3>Martillo de Carpintero</h3>
+          <p>500g, mango fibra de vidrio</p>
+          <div class="product-footer">
+            <span class="price">85 Bs</span>
+            <button class="add-btn" onclick="addToCart('Martillo de Carpintero', 85, this)">
+              <i class="fas fa-cart-plus"></i> Agregar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="seguridad">
+        <div class="product-badge oferta">Oferta</div>
+        <div class="product-img-wrap">
+          <img src="img/casco.jpg" alt="Casco de Seguridad" loading="lazy"/>
+        </div>
+        <div class="product-info">
+          <h3>Casco de Seguridad Clase E</h3>
+          <p>Dieléctrico, ajustable, certificado</p>
+          <div class="product-footer">
+            <span class="price">75 Bs</span>
+            <button class="add-btn" onclick="addToCart('Casco de Seguridad', 75, this)">
+              <i class="fas fa-cart-plus"></i> Agregar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="seguridad">
+        <div class="product-img-wrap">
+          <img src="img/guantes.jpg" alt="Guantes de Cuero" loading="lazy"/>
+        </div>
+        <div class="product-info">
+          <h3>Guantes de Cuero Reforzado</h3>
+          <p>Talla M/L/XL, protección total</p>
+          <div class="product-footer">
+            <span class="price">45 Bs</span>
+            <button class="add-btn" onclick="addToCart('Guantes de Cuero', 45, this)">
+              <i class="fas fa-cart-plus"></i> Agregar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="plomeria">
+        <div class="product-img-wrap">
+          <img src="img/llaveTubo.jpg" alt="Llave de Tubo" loading="lazy"/>
+        </div>
+        <div class="product-info">
+          <h3>Llave de Tubo 18"</h3>
+          <p>Acero forjado, bocas extra largas</p>
+          <div class="product-footer">
+            <span class="price">120 Bs</span>
+            <button class="add-btn" onclick="addToCart('Llave de Tubo 18\"', 120, this)">
+              <i class="fas fa-cart-plus"></i> Agregar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="plomeria">
+        <div class="product-img-wrap">
+          <img src="img/cinta.jpg" alt="Cinta Teflón" loading="lazy"/>
+        </div>
+        <div class="product-info">
+          <h3>Cinta Teflón PTFE x12u</h3>
+          <p>Pack x12 rollos, sellado hermético</p>
+          <div class="product-footer">
+            <span class="price">55 Bs</span>
+            <button class="add-btn" onclick="addToCart('Cinta Teflón x12u', 55, this)">
+              <i class="fas fa-cart-plus"></i> Agregar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="electrica">
+        <div class="product-badge new">Nuevo</div>
+        <div class="product-img-wrap">
+          <img src="img/pistola.jpg" alt="Pistola de Calor" loading="lazy"/>
+        </div>
+        <div class="product-info">
+          <h3>Pistola de Calor 2000W</h3>
+          <p>2 temperaturas, accesorio incluido</p>
+          <div class="product-footer">
+            <span class="price">390 Bs</span>
+            <button class="add-btn" onclick="addToCart('Pistola de Calor 2000W', 390, this)">
+              <i class="fas fa-cart-plus"></i> Agregar
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN CONTACTO -->
+  <section class="section hidden" id="contacto">
+    <div class="contact-hero">
+      <h2><i class="fas fa-address-book"></i> Contacto</h2>
+      <p>Estamos para ayudarte. Comunícate con nuestro equipo</p>
+    </div>
+
+    <div class="contact-layout">
+
+      <!-- INFO TARJETAS -->
+      <div class="contact-info">
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <h4>Sucursal Central</h4>
+            <p>Av. Mariscal Santa Cruz #1234<br/>La Paz, Bolivia</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-clock"></i></div>
+          <div>
+            <h4>Horario de Atención</h4>
+            <p>Lun – Vie: 8:00 – 19:00<br/>Sáb: 8:00 – 14:00</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
+          <div>
+            <h4>WhatsApp</h4>
+            <p>+591 7 234 5678</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- EQUIPO -->
+      <div class="team-section">
+        <h3 class="team-title">Nuestro Equipo</h3>
+        <div class="team-grid">
+
+          <div class="team-card">
+            <div class="team-avatar" style="background: #e67e22;">CR</div>
+            <div class="team-info">
+              <h4>Carlos Ríos</h4>
+              <span class="team-role">Gerente General</span>
+              <a href="tel:+59172345678" class="team-contact"><i class="fas fa-phone"></i> +591 7 234 5678</a>
+              <a href="mailto:carlos@gonzales.bo" class="team-contact"><i class="fas fa-envelope"></i> carlos@gonzales.bo</a>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar" style="background: #27ae60;">MV</div>
+            <div class="team-info">
+              <h4>María Vargas</h4>
+              <span class="team-role">Atención al Cliente</span>
+              <a href="tel:+59171239876" class="team-contact"><i class="fas fa-phone"></i> +591 7 123 9876</a>
+              <a href="mailto:maria@gonzales.bo" class="team-contact"><i class="fas fa-envelope"></i> maria@gonzales.bo</a>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar" style="background: #2980b9;">JM</div>
+            <div class="team-info">
+              <h4>José Mamani</h4>
+              <span class="team-role">Asesor Técnico</span>
+              <a href="tel:+59176541230" class="team-contact"><i class="fas fa-phone"></i> +591 7 654 1230</a>
+              <a href="mailto:jose@gonzales.bo" class="team-contact"><i class="fas fa-envelope"></i> jose@gonzales.bo</a>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar" style="background: #8e44ad;">LQ</div>
+            <div class="team-info">
+              <h4>Lucía Quispe</h4>
+              <span class="team-role">Ventas Corporativas</span>
+              <a href="tel:+59179871234" class="team-contact"><i class="fas fa-phone"></i> +591 7 987 1234</a>
+              <a href="mailto:lucia@gonzales.bo" class="team-contact"><i class="fas fa-envelope"></i> lucia@gonzales.bo</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- FORMULARIO -->
+      <div class="contact-form-wrap">
+        <h3>Envíanos un mensaje</h3>
+        <div class="contact-form">
+          <div class="form-group">
+            <label>Nombre completo</label>
+            <input type="text" placeholder="Tu nombre" id="formNombre"/>
+          </div>
+          <div class="form-group">
+            <label>Correo electrónico</label>
+            <input type="email" placeholder="correo@ejemplo.com" id="formEmail"/>
+          </div>
+          <div class="form-group">
+            <label>Teléfono</label>
+            <input type="tel" placeholder="+591 7 000 0000" id="formTel"/>
+          </div>
+          <div class="form-group">
+            <label>Mensaje</label>
+            <textarea rows="4" placeholder="¿En qué podemos ayudarte?" id="formMsg"></textarea>
+          </div>
+          <button class="submit-btn" onclick="submitForm()">
+            <i class="fas fa-paper-plane"></i> Enviar Mensaje
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="brand-icon small"><i class="fas fa-toolbox"></i></div>
+        <span>GONZALES</span>
+      </div>
+      <p>© 2024 Ferretería Gonzales. Todos los derechos reservados. La Paz, Bolivia.</p>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
